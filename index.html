@@ -56,6 +56,20 @@
             width: 100%;
             border: none;
         }
+        .slider {
+            max-width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .slide {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: none;
+}
+
     </style>
 </head>
 <body>
@@ -76,6 +90,11 @@
 <section class="hero">
     <h1>Welcome to Richphaela School</h1>
     <p>Where learning begins with love, care, and excellence.</p>
+    <div style="text-align:center; margin-top: 20px;">
+  <a href="admission.html" style="background:#005580;color:#fff;padding:10px 20px;border-radius:5px;text-decoration:none;margin:10px;">Apply for Admission</a>
+  <a href="contact.html" style="background:#0077b6;color:#fff;padding:10px 20px;border-radius:5px;text-decoration:none;margin:10px;">Contact Us</a>
+</div>
+
     <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
     title="Richphaela School Video" allowfullscreen></iframe>
 </section>
@@ -83,7 +102,26 @@
 <section class="section" id="about">
     <h2>About Us</h2>
     <p>Richphaela Early Childhood School is committed to nurturing young minds in a safe, joyful, and stimulating environment. Our dedicated staff are passionate about early childhood education and work with parents to give every child a strong foundation in life.</p>
-    <img src="classroom.jpg" alt="Classroom" style="width: 100%; border-radius: 10px;">
+    <img src="buiding.jpg" alt="Classroom" style="width: 100%; border-radius: 10px;">
+    <div class="slider">
+  <img class="slide" src="slide1.jpg" style="display:block;">
+  <img class="slide" src="slide2.jpg">
+  <img class="slide" src="slide3.jpg">
+  <img class="slide" src="slide4.jpg">
+  <img class="slide" src="slide5.jpg">
+</div>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName("slide");
+  setInterval(() => {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].style.display = "block";
+  }, 3000); // Change slide every 3 seconds
+</script>
 </section>
 
 <section class="section" id="programs">
@@ -116,6 +154,7 @@
     <h3>Find Us Here:</h3>
     <iframe src="https://www.google.com/maps?q=Richphaela+School,+Ojodu+Berger,+Lagos&output=embed" height="300"></iframe>
 </section>
+
 
 <footer class="footer">
     <p>© 2025 Richphaela Early Childhood School. All Rights Reserved.</p>
